@@ -14,7 +14,8 @@ class NewsTile extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(6),
           child: Image.network(
-            articleModel.image??"",
+            articleModel.image ??
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png",
             height: 200,
             width: double.infinity,
             fit: BoxFit.cover,
@@ -33,7 +34,7 @@ class NewsTile extends StatelessWidget {
         ),
         SizedBox(height: 8),
         Text(
-          articleModel.subTitle??"",
+          articleModel.subTitle ?? "",
           maxLines: 2,
           style: TextStyle(color: Colors.grey, fontSize: 14),
         ),
